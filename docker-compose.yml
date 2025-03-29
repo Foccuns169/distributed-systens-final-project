@@ -1,6 +1,7 @@
 services:
   frontend:
     image: node:18
+    container_name: frontend
     working_dir: /app
     volumes:
       - ./frontend:/app
@@ -12,6 +13,7 @@ services:
 
   backend:
     image: node:18
+    container_name: backend
     working_dir: /app
     volumes:
       - ./backend:/app
@@ -23,6 +25,7 @@ services:
 
   db:
     image: mongo:latest
+    container_name: database
     restart: always
     ports:
       - "27017:27017"
@@ -31,6 +34,7 @@ services:
 
   nginx:
     image: nginx:latest
+    container_name: nginx
     ports:
       - "80:80"
     volumes:
@@ -40,6 +44,7 @@ services:
 
   prometheus:
     image: prom/prometheus:latest
+    container_name: prometheus
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
     command:
@@ -51,6 +56,7 @@ services:
 
   grafana:
     image: grafana/grafana:latest
+    container_name: grafana
     ports:
       - "3001:3000"
     volumes:
