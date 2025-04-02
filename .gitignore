@@ -1,4 +1,4 @@
 node_modules
 .next
 
-firebaseConfig.js
+frontend/firebaseConfig.js
