@@ -2,7 +2,7 @@
 FROM node:18
 
 # Diretório de trabalho
-WORKDIR /app
+WORKDIR /server
 
 # Copiar os arquivos de dependências
 COPY package*.json ./
